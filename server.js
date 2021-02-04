@@ -26,6 +26,6 @@ app.use(express.json());
 app.post('/signin', signin.handleSignin(db, bcrypt))
 app.post('/register', (req, res) => { register.handleRegister(req, res, db, bcrypt) })
 
-app.listen(5000, ()=>{
-    console.log('listening of port 5000');
+app.listen(process.env.PORT || 3000, ()=>{
+    console.log(`listening of port ${process.env.PORT}`);
 })
